@@ -1,0 +1,5 @@
+<nav md-tab-nav-bar aria-label="weather navigation links">
+	<a md-tab-link [routerLink]="'dictionary'" [active]="activeLink === 0" (click)="activeLink = 0"> Dictionary </a>
+	<a md-tab-link [routerLink]="'list'" [active]="activeLink === 1" (click)="activeLink = 1"> List </a>
+	<a md-tab-link [routerLink]="'learn'" [active]="activeLink === 2" (click)="activeLink = 2"> Learn </a>
+</nav>

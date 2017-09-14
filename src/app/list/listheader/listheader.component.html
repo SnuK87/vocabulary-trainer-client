@@ -1,0 +1,23 @@
+<md-list>
+	<md-list-item>
+		<!-- <md-select placeholder="List" [(ngModel)]="selectedList" (change)="onChange()"> 
+		<md-option *ngFor="let list of lists$ | async" [value]="list.name">{{list.name }}</md-option>
+		 </md-select> -->
+		 <app-selectlist></app-selectlist>
+	</md-list-item>
+
+	<md-list-item>
+	<form class="example-form">
+	  <md-input-container class="example-full-width">
+	    <input mdInput placeholder="Name" [formControl]="newListControl">
+	    <md-error *ngIf="newListControl.hasError('minlength')">
+	      Name should be at least <strong>3</strong> characters long
+	    </md-error>
+	    <md-error *ngIf="newListControl.hasError('required')">
+	      Name is <strong>required</strong>
+	    </md-error>
+	  </md-input-container>
+	</form>
+	 <button md-raised-button>Add</button>
+	</md-list-item>
+</md-list>
