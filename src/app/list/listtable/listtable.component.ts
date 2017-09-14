@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { DataSource } from '@angular/cdk';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Vocabulary } from '../../model/vocabulary.model';
-import { ListService } from '../../service/list.service';
-import { Subscription } from 'rxjs/Subscription';
+import {Component, OnInit} from '@angular/core';
+import {DataSource} from '@angular/cdk';
+import {Observable} from 'rxjs/Observable';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Vocabulary} from '../../model/vocabulary.model';
+import {ListService} from '../../service/list.service';
+import {Subscription} from 'rxjs/Subscription';
 
 
-@Component( {
-    selector: 'app-listtable',
-    templateUrl: './listtable.component.html',
-    styleUrls: ['./listtable.component.css']
-} )
+@Component({
+  selector: 'app-listtable',
+  templateUrl: './listtable.component.html',
+  styleUrls: ['./listtable.component.css']
+})
 export class ListtableComponent implements OnInit {
 
-    //    exampleDatabase = new ExampleDatabase();
-    //    dataSource: ExampleDataSource = null;
+  //    exampleDatabase = new ExampleDatabase();
+  //    dataSource: ExampleDataSource = null;
 
-    constructor() { }
+  constructor() {
+  }
 
-    ngOnInit() {
-        //        this.dataSource = new ExampleDataSource();
-    }
+  ngOnInit() {
+    //        this.dataSource = new ExampleDataSource();
+  }
 }
 
 // export class ExampleDatabase {
