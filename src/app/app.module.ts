@@ -12,7 +12,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {ListtableComponent} from './list/listtable/listtable.component';
-import {ListheaderComponent} from './list/listheader/listheader.component';
 
 import {ListService} from './service/list.service';
 
@@ -29,7 +28,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DictionaryComponent,
     ListComponent,
     ListtableComponent,
-    ListheaderComponent,
     LearnComponent,
     SelectlistComponent
   ],

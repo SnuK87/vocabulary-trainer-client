@@ -3,3 +3,23 @@
 	<!--<a md-tab-link [routerLink]="'list'" [active]="activeLink === 1" (click)="activeLink = 1"> List </a>-->
 	<!--<a md-tab-link [routerLink]="'learn'" [active]="activeLink === 2" (click)="activeLink = 2"> Learn </a>-->
 <!--</nav>-->
+
+
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a routerLink="/dictionary" routerLinkActive="active">Dictionary</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/list" routerLinkActive="active">Lists</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -4,17 +4,17 @@
       <md-header-cell *cdkHeaderCellDef> Id </md-header-cell>
       <md-cell *cdkCellDef="let row"> {{row.id}} </md-cell>
     </ng-container>
-    
+
     <ng-container cdkColumnDef="english">
       <md-header-cell *cdkHeaderCellDef> English </md-header-cell>
       <md-cell *cdkCellDef="let row"> {{row.english}} </md-cell>
     </ng-container>
-    
+
     <ng-container cdkColumnDef="korean">
       <md-header-cell *cdkHeaderCellDef> Korean </md-header-cell>
       <md-cell *cdkCellDef="let row"> {{row.korean}} </md-cell>
     </ng-container>
-    
+
     <ng-container cdkColumnDef="pronounciation">
       <md-header-cell *cdkHeaderCellDef> Pronounciation </md-header-cell>
       <md-cell *cdkCellDef="let row"> {{row.pronounciation}} </md-cell>
@@ -24,3 +24,30 @@
     <md-row *cdkRowDef="let row; columns: ['id', 'english', 'korean', 'pronounciation']"></md-row>
   </md-table>
 </div> -->
+
+<table class="table table-sm">
+  <thead>
+  <tr>
+    <!--<th>#</th>-->
+    <th>Korean</th>
+    <th>Pronunciation</th>
+    <th>{{selectedLanguage}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <!--<th scope="row">1</th>-->
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr *ngFor="let v of selectedList['vocabularies']">
+    <td>{{v.korean}}</td>
+    <td>{{v.pronunciation}}</td>
+    <td *ngFor="let t of v['translations']">
+    <span *ngIf="t.language == selectedLanguage">{{t.translation}}</span>
+    </td>
+  </tr>
+
+  </tbody>
+</table>

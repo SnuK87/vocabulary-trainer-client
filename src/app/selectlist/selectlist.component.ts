@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
 import {ListService} from '../service/list.service';
 import {VocabularyList} from '../model/vocabularylist.model';
 import {Subscription} from 'rxjs/Subscription';
@@ -15,23 +15,30 @@ export class SelectlistComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   selectedList: VocabularyList;
 
+  lists: Array<VocabularyList>;
+
+  // @Output()
+  // changeEvent = new EventEmitter<string>();
+
   constructor(private listService: ListService) {
-    this.lists$ = this.listService.getLists();
-    this.subscription = this.listService.getSelectedList().subscribe(selectedList => {
-      this.selectedList = selectedList;
-    });
+
   }
 
-  onChange() {
+  onChange(index: number) {
     console.log('onCHange');
-    this.listService.setSelectedList(this.selectedList);
+    // console.log(this.listService.getById(id));
+    this.listService.setSelectedList(this.lists[index]);
+    // this.changeEvent.emit('changed');
   }
+
 
   ngOnInit() {
+    console.log('onInit');
+    this.lists = this.listService.getLists();
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 }
