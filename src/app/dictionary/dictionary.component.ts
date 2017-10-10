@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {DictionaryService} from "../service/dictionary.service";
+import {Observable} from "rxjs/Observable";
+import {Vocabulary} from "../model/vocabulary.model";
 
 @Component({
   selector: 'app-dictionary',
@@ -7,9 +10,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DictionaryComponent implements OnInit {
 
-  constructor() {
+  vocabularies$: Observable<Vocabulary[]>;
+
+  constructor(private dictionaryService: DictionaryService) {
   }
 
   ngOnInit() {
+    this.vocabularies$ = this.dictionaryService.getVocabularies()
   }
 }

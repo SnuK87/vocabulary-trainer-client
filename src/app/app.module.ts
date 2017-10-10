@@ -15,8 +15,9 @@ import {ListtableComponent} from './list/listtable/listtable.component';
 
 import {ListService} from './service/list.service';
 
+import {DictionaryService} from './service/dictionary.service';
+
 import {HttpClientModule} from '@angular/common/http';
-import {LearnComponent} from './learn/learn.component';
 import {SelectlistComponent} from './selectlist/selectlist.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -28,7 +29,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DictionaryComponent,
     ListComponent,
     ListtableComponent,
-    LearnComponent,
     SelectlistComponent
   ],
   imports: [
@@ -39,11 +39,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'dictionary', component: DictionaryComponent},
-      {path: 'list', component: ListComponent},
-      {path: 'learn', component: LearnComponent}
+      {path: 'list', component: ListComponent}
     ])
   ],
-  providers: [ListService],
+  providers: [ListService, DictionaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
